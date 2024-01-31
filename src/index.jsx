@@ -9,8 +9,12 @@ import logger from 'redux-logger';
 
 /** TODO: Add REDUCERS */
 function airlineList(state = ['Delta'], action) {
+  if (action.type === 'AIRLINE_ADD') {
+    return [...state, action.payload];
+  }
   return state;
 }
+
 /** TODO: Create store */
 
 const storeAirline = createStore(
